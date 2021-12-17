@@ -45,11 +45,21 @@ git_repository(
     tag = "v0.29.0",
 )
 
+git_repository(
+    name = "bazel_gazelle",
+    remote = "https://github.com/bazelbuild/bazel-gazelle.git",
+    tag = "v0.24.0",
+)
+
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
 go_rules_dependencies()
 
 go_register_toolchains(version = "1.17.1")
+
+load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
+
+gazelle_dependencies()
 
 git_repository(
     name = "org_tensorflow",

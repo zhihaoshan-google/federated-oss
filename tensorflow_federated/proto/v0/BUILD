@@ -75,15 +75,10 @@ cc_grpc_library(
     deps = [":executor_cc_proto"],
 )
 
-go_proto_library(
-    name = "executor_go_proto",
-    deps = [":executor_proto"],
-)
-
 go_grpc_library(
     name = "executor_go_grpc_proto",
-    srcs = [":executor_proto"],
-    deps = [":executor_go_proto"],
+    importpath="./",
+    protos = [":executor_proto", ":computation_proto"],
 )
 
 filegroup(
