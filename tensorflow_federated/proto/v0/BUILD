@@ -77,7 +77,7 @@ cc_grpc_library(
 
 go_grpc_library(
     name = "executor_go_grpc_proto",
-    importpath="./",
+    importpath="github.com/zhihansh/federated-oss/tensorflow_federated/proto/v0/executor_go_grpc_proto",
     protos = [":executor_proto", ":computation_proto"],
 )
 
